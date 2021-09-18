@@ -84,3 +84,45 @@ for el in b:
 
 
 #1
+def generate_letter(mail, name, date, time, place, teacher = 'Тимур Гуев', number = '17'):
+    a = 'To: ' + mail + '\n'
+    b = 'Приветствую, ' + name + '!' + '\n'
+    c = 'Вам назначен экзамен, который пройдет ' + date + ', в ' + time + '.'+ '\n'
+    d = 'По адресу: ' + place + '.'+ '\n'
+    e = 'Экзамен будет проводить ' + teacher + ' в кабинете ' + number+ '.' + '\n'
+    f = 'Желаем удачи на экзамене!'
+    return a+b+c+d+e+f
+#2
+def pretty_print(data, side='-', delimiter='|'):
+    a = list()
+    b = list()
+    space = ' '
+    for j in data:
+        for symbol in str(j):
+            b.append(symbol)
+    d = 0
+    for i in range(len(data)):
+        a.append(delimiter)
+        a.append(' ')
+        count = 0
+        c = 0
+        
+        for z in range(len(b)):
+            if count < len(str(data[i])):
+                a.append(b[d])
+                count += 1
+                d += 1
+        c += len(str(data[i]))
+        
+        a.append(' ')
+    a.append(delimiter)
+    print(' ', end= '')
+    for i in range(len(a)-2):
+        print(side, end='')
+    print(' ', end='\n')
+    print(*a, sep ='', end='\n')
+    print(' ', end= '')
+    for i in range(len(a)-2):
+        print(side, end='')
+   
+    print(' ')
